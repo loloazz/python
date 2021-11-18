@@ -1,0 +1,13 @@
+#!/bin/bash
+#该脚本是用来显示集群的所有java进程状态
+
+list="master node1 node2"
+
+echo "显示集群的所有java进程状态"
+for node  in  $list
+do
+	echo "##### "$node"jps #####" 
+	ssh $node $JAVA_HOME'/bin/jps'
+	
+done
+echo "#####执行结束#####"
